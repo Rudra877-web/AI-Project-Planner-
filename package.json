@@ -1,0 +1,26 @@
+{
+  "name": "buildflow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BuildFlow — From Idea to Deployment, One Plan. AI-powered developer project planner.",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm run dev --workspace server",
+    "dev:client": "npm run dev --workspace client",
+    "build": "npm run build --workspace server && npm run build --workspace client",
+    "start": "npm run start --workspace server",
+    "seed": "npm run seed --workspace server",
+    "seed:reset": "npm run seed:reset --workspace server",
+    "typecheck": "npm run typecheck --workspace server && npm run typecheck --workspace client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

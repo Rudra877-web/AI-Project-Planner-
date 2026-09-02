@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /tmp)",
+      "Bash(timeout 60 npm view typeorm dist-tags)",
+      "Bash(timeout 60 npm view typeorm versions --json)",
+      "Bash(timeout 60 npm view tailwindcss dist-tags)",
+      "Bash(timeout 60 npm view react dist-tags)",
+      "Bash(timeout 60 npm view react-router-dom version)"
+    ]
+  }
+}
